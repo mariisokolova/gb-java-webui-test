@@ -20,7 +20,7 @@ public class AuthorizationTest extends BaseTest {
 
         String login = "ijwqlxsckorgmpxvzd@miucce.com";
         String password = "ijwqlxsckorgmpxv3zd";
-        String nameHomePage = "Главная1";
+        String nameHomePage = "Главная";
 
         new AuthorizationPage(driver).authorization(login,password);
 
