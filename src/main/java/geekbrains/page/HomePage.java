@@ -1,6 +1,6 @@
-package page;
+package geekbrains.page;
 
-import block.HeaderMenu;
+import geekbrains.block.HeaderMenu;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

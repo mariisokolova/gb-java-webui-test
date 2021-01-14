@@ -1,4 +1,4 @@
-package base;
+package geekbrains.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -6,8 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -17,7 +15,6 @@ public abstract class BaseTest {
 
     public ChromeDriver driver;
     public WebDriverWait wait15second;
-    public static Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
     @BeforeEach
     public void beforeAll() {
@@ -34,8 +31,7 @@ public abstract class BaseTest {
     }
 
     @AfterEach
-    public void afterAll() {
-        driver.quit();
+    void tearDown() {
+            driver.quit();
     }
-
 }

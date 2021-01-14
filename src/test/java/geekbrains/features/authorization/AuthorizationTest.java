@@ -1,9 +1,13 @@
-import base.BaseTest;
+package geekbrains.features.authorization;
+
+import geekbrains.base.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import page.AuthorizationPage;
-import page.HomePage;
+import geekbrains.page.AuthorizationPage;
+import geekbrains.page.HomePage;
+
+import static geekbrains.common.Configuration.*;
 
 
 public class AuthorizationTest extends BaseTest {
@@ -19,16 +23,8 @@ public class AuthorizationTest extends BaseTest {
 
         AuthorizationPage authorizationPage = new AuthorizationPage(driver);
         HomePage homePage = new HomePage(driver);
-
-        String login = "ijwqlxsckorgmpxvzd@miucce.com";
-        String password = "ijwqlxsckorgmpxv3zd";
-        String nameHomePage = "Главная";
-
-        logger.info("Начало теста авторизации");
-        new AuthorizationPage(driver).authorization(login,password);
-
-        logger.info("Проверка заголовка домашней страницы");
-        homePage.checkNamePage(nameHomePage);
+        new AuthorizationPage(driver).authorization(LOGIN,PASSWORD);
+        homePage.checkNamePage(HOMEPAGENAME);
 
     }
 }

@@ -1,4 +1,4 @@
-package page;
+package geekbrains.page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +11,7 @@ public class SearchPage {
     @FindBy(css = "[id=\"professions\"] h2")
     private WebElement professionHeader;
 
-    @FindBy(xpath = "//div[@id='professions']//header[@class='search-page-block__header']//span")
+    @FindBy(xpath = "//*[@id=\"professions\"]/div[1]/header/ul/li/a/span")
     private WebElement professionCounter;
 
     public SearchPage(WebDriver driver) {

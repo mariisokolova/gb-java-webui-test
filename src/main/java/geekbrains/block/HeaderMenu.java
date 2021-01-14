@@ -1,4 +1,4 @@
-package block;
+package geekbrains.block;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
