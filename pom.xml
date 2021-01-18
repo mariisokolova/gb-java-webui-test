@@ -21,16 +21,17 @@
     <junit-jupiter.version>5.6.2</junit-jupiter.version>
     <hamcrest.version>2.2</hamcrest.version>
     <webdrivermanager.version>4.1.0</webdrivermanager.version>
+    <allure.version>2.13.5</allure.version>
     <aspectj.version>1.9.4</aspectj.version>
     <lombok.version>1.18.12</lombok.version>
-    <log4j.version>1.2.17</log4j.version>
-    <slf4j.version>1.7.30</slf4j.version>
+
     <!--plugin versions-->
     <maven-surefire.version>2.22.2</maven-surefire.version>
   </properties>
 
 
   <dependencies>
+
     <dependency>
       <groupId>com.github.javafaker</groupId>
       <artifactId>javafaker</artifactId>
@@ -62,35 +63,31 @@
     </dependency>
 
     <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-junit5</artifactId>
+      <version>${allure.version}</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
     </dependency>
-      <dependency>
-          <groupId>org.hamcrest</groupId>
-          <artifactId>hamcrest-core</artifactId>
-          <version>${hamcrest.version}</version>
-          <scope>test</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>log4j</groupId>
-        <artifactId>log4j</artifactId>
-        <version>${log4j.version}</version>
-      </dependency>
-
-      <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
-      <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-simple</artifactId>
-        <version>${slf4j.version}</version>
-        <scope>test</scope>
-      </dependency>
 
   </dependencies>
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>2.10.0</version>
+        <configuration>
+          <reportVersion>2.13.0</reportVersion>
+          <resultsDirectory>allure-results</resultsDirectory>
+        </configuration>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
@@ -99,7 +96,7 @@
           <!--true - Статус билда не зависит от прохождения тестов-->
           <testFailureIgnore>true</testFailureIgnore>
           <includes>
-            <include>**/*WebTest*.java</include>
+            <include>**/*Test*.java</include>
           </includes>
           <argLine>
             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

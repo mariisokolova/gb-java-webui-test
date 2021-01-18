@@ -1,6 +1,7 @@
 package geekbrains.features.search;
 
 import geekbrains.base.BaseTest;
+import io.qameta.allure.Feature;
 import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -13,6 +14,7 @@ import geekbrains.page.SearchPage;
 import static org.hamcrest.Matchers.*;
 
 
+@Feature("Поиск на Geekbrains")
 public class SearchTest extends BaseTest {
 
     @BeforeEach

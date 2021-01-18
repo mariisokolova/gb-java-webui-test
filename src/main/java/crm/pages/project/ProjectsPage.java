@@ -1,5 +1,6 @@
 package crm.pages.project;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,11 +18,13 @@ public class ProjectsPage extends BasePage {
         super(driver);
     }
 
+    @Step("Клик на кнопку создания проекта")
     public NewProjectsPage clickOnCreateNewProjectsButton() {
         createNewProjectsButton.click();
         return new NewProjectsPage(driver);
     }
 
+    @Step("Проверка успешности создания проекта")
     public ProjectsPage checkNewProjectsPopUp() {
         String message = wait10second.until(ExpectedConditions
                 .presenceOfElementLocated(By.cssSelector("div[class='message']")))

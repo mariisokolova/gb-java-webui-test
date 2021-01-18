@@ -1,6 +1,7 @@
 package crm.features.projects;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Test;
 import crm.enums.ProjectsSubMenuButtons;
 import crm.pages.project.ProjectsPage;
@@ -10,7 +11,7 @@ import crm.base.BaseTest;
 
 import static crm.common.Configuration.*;
 
-
+@Feature("Создание нового проекта в CRM")
 public class NewProjectsTest extends BaseTest{
 
     @Test
